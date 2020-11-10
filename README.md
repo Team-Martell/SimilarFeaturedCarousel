@@ -4,10 +4,10 @@
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+  - https://github.com/Team-Martell/InitialViewAndProductPicCarousel
+  - https://github.com/Team-Martell/AboutThisItem
   - https://github.com/Team-Martell/SimilarFeaturedCarousel
-  - https://github.com/teamName/repo
+  - https://github.com/Team-Martell/RatingsandReviews
 
 ## Table of Contents
 
