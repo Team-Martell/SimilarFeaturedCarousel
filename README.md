@@ -1,12 +1,12 @@
 # Project Name
 
-> Project description
+> NearMiss
 
 ## Related Projects
 
   - https://github.com/teamName/repo
   - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+  - https://github.com/Team-Martell/SimilarFeaturedCarousel
   - https://github.com/teamName/repo
 
 ## Table of Contents
