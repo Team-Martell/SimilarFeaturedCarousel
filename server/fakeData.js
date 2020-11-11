@@ -42,7 +42,6 @@ for (var i = 0; i < 100; i++) {
     faker.commerce.product()
   ])
 }
-console.log(products[0]);
 qString = 'INSERT IGNORE INTO products (description, price, imageUrl, featured, category_id, productType_id) VALUES (?, ?, ? ,? ,(SELECT id FROM categories WHERE categories.name = ?), (SELECT id FROM productTypes WHERE productTypes.name = ?))'
 for (var i = 0; i < products.length; i++)
 connection.query(qString, products[i], (err, res) => {
