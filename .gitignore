@@ -1,4 +1,4 @@
 node_modules
-config.js
+server/fakeData/config.js
 
 public/dist/bundle.js
