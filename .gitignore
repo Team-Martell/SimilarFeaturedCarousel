@@ -1,4 +1,5 @@
 node_modules
-server/config.js
+server/fakeData/config.js
+
 
 public/dist/bundle.js

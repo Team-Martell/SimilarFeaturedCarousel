@@ -10,7 +10,8 @@
   "scripts": {
     "server": "nodemon server/index.js",
     "build": "webpack -d -w",
-    "seed": "node server/fakeData.js"
+    "seed": "node server/fakeData/fakeData.js",
+    "test": "jest"
   },
   "dependencies": {
     "express": "^4.17.1",
