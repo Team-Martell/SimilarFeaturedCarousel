@@ -8,12 +8,18 @@ const connection = mysql.createConnection({
   database
 });
 
-//fill the prodcutTypes table
-const fillProductTypes = () => {
+
+const createFakeProductTypes = (n) => {
   var productTypes = [];
-  for (var i = 0; i<200; i++) {
+  for (var i = 0; i<n; i++) {
     productTypes.push(faker.commerce.product());
   }
+  return productTypes;
+};
+
+const fillProductTypes = (n) => {
+  var productTypes = createFakeProductTypes(n);
+
   var qString = 'INSERT IGNORE INTO ProductTypes (Name) VALUES (?)'
   for (var i = 0; i < productTypes.length; i++)
   connection.query(qString, [productTypes[i]], (err, res) => {
@@ -22,23 +28,26 @@ const fillProductTypes = () => {
 }
 
 //fill the categories table
-
-const fillCategories = () => {
+const createFakeCategories = (n) => {
   var categories = [];
-  for (var i = 0; i < 200; i++) {
+  for (var i = 0; i < n; i++) {
     categories.push(faker.commerce.department());
   }
-  qString = 'INSERT IGNORE INTO categories (Name) VALUES (?)'
+  return categories;
+}
+
+const fillCategories = (n) => {
+  var categories = createFakeCategories(n);
+  var qString = 'INSERT IGNORE INTO categories (Name) VALUES (?)'
   for (var i = 0; i < categories.length; i++)
   connection.query(qString, [categories[i]], (err, res) => {
     if (err) { return console.log(err)}
   });
 }
 
-//fill the products table
-const fillProducts = () => {
+const createFakeProducts = (n) => {
   var products = [];
-  for (var i = 0; i < 100; i++) {
+  for (var i = 0; i < n; i++) {
     products.push([
       faker.commerce.productName(),
       faker.commerce.price(),
@@ -48,18 +57,21 @@ const fillProducts = () => {
       faker.commerce.product()
     ])
   }
-  qString = 'INSERT IGNORE INTO products (description, price, imageUrl, featured, category_id, productType_id) VALUES (?, ?, ? ,? ,(SELECT id FROM categories WHERE categories.name = ?), (SELECT id FROM productTypes WHERE productTypes.name = ?))'
+  return products;
+}
+const fillProducts = (n) => {
+  var products = createFakeProducts(n)
+  var qString = 'INSERT IGNORE INTO products (description, price, imageUrl, featured, category_id, productType_id) VALUES (?, ?, ? ,? ,(SELECT id FROM categories WHERE categories.name = ?), (SELECT id FROM productTypes WHERE productTypes.name = ?))'
   for (var i = 0; i < products.length; i++)
   connection.query(qString, products[i], (err, res) => {
     if (err) { return console.log(err)}
   });
 }
 
-fillProductTypes();
-fillCategories();
-fillProducts();
-
 module.exports = {
+  createFakeCategories,
+  createFakeProductTypes,
+  createFakeProducts,
   fillProductTypes,
   fillProducts,
   fillCategories

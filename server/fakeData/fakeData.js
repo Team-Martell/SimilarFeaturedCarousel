@@ -1,6 +1,6 @@
 const fake = require('./fakeDataHelpers.js');
 
-fake.fillProductTypes();
-fake.fillCategories();
+fake.fillProductTypes(200);
+fake.fillCategories(200);
 
-fake.fillProducts();
+fake.fillProducts(100);
