@@ -10,14 +10,16 @@
   "scripts": {
     "server": "nodemon server/index.js",
     "build": "webpack -d -w",
-    "seed": "node server/fakeData/fakeData.js",
-    "test": "jest"
+    "seed": "node database/fakeData/fakeData.js",
+    "test": "jest",
+    "reset": "mysql -u root -p < schema.sql"
   },
   "dependencies": {
     "express": "^4.17.1",
     "mysql": "^2.18.1",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "underscore": "^1.11.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.3",
