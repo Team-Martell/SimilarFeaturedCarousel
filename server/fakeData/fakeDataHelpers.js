@@ -24,11 +24,11 @@ const fillProductTypes = async (n) => {
   for (var i = 0; i < productTypes.length; i++) {
     await connection.query(qString, [productTypes[i]], (err, res) => {
       if (err) { return console.log(err)}
-      console.log('store data to', i);
+      // console.log('store data to', i);
     });
-    console.log('data stored in', i);
+    // console.log('data stored in', i);
   }
-  console.log('all stored');
+  // console.log('all stored');
 }
 
 //fill the categories table
@@ -40,11 +40,11 @@ const createFakeCategories = (n) => {
   return categories;
 }
 
-const fillCategories = (n) => {
+const fillCategories = async (n) => {
   var categories = createFakeCategories(n);
   var qString = 'INSERT IGNORE INTO categories (Name) VALUES (?)'
   for (var i = 0; i < categories.length; i++) {
-    connection.query(qString, [categories[i]], (err, res) => {
+      await connection.query(qString, [categories[i]], (err, res) => {
       if (err) { return console.log(err)}
     });
   }
@@ -64,15 +64,16 @@ const createFakeProducts = (n) => {
   }
   return products;
 }
-const fillProducts = (n) => {
+const fillProducts = async (n) => {
   var products = createFakeProducts(n)
   var qString = 'INSERT IGNORE INTO products (description, price, imageUrl, featured, category_id, productType_id) VALUES (?, ?, ? ,? ,(SELECT id FROM categories WHERE categories.name = ?), (SELECT id FROM productTypes WHERE productTypes.name = ?))'
   for (var i = 0; i < products.length; i++) {
-    connection.query(qString, products[i], (err, res) => {
+      await connection.query(qString, products[i], (err, res) => {
       if (err) { return console.log(err)}
     });
   }
 }
+
 
 module.exports = {
   createFakeCategories,
