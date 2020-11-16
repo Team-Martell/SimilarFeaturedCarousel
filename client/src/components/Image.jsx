@@ -16,7 +16,7 @@ class Image extends React.Component {
         <styles.Price>
           {'$'.concat(this.props.data.price)}
         </styles.Price>
-        <div>{(this.props.data.description.length < 21) ?this.props.data.description : this.props.data.description.substr(0, 20).concat('...')}</div>
+        <div>{(this.props.data.description.length < 21) ?this.props.data.description : this.props.data.description.substr(0, 18).concat('...')}</div>
       </styles.ImageContainer>
     )
   }
