@@ -9,15 +9,22 @@ class Image extends React.Component {
 
   render() {
     return (
-      <styles.ImageContainer>
+      <styles.ProductContainer>
         <styles.Image
           src={this.props.data.imageUrl}>
         </styles.Image>
-        <styles.Price>
-          {'$'.concat(this.props.data.price)}
-        </styles.Price>
-        <div>{(this.props.data.description.length < 21) ?this.props.data.description : this.props.data.description.substr(0, 18).concat('...')}</div>
-      </styles.ImageContainer>
+        <styles.ProductInfo>
+          <styles.Price>
+            {'$'.concat(this.props.data.price)}
+          </styles.Price>
+          <div>
+            {(this.props.data.description.length < 23) ?
+            this.props.data.description :
+            this.props.data.description.substr(0, 22).concat('...')}
+          </div>
+        </styles.ProductInfo>
+
+      </styles.ProductContainer>
     )
   }
 }

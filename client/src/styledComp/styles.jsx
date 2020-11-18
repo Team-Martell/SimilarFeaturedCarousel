@@ -12,21 +12,27 @@ export default {
 
   Carousel:
     styled.ul`
+      margin: 20px;
       display: flex;
       list-style-type: none;
+      overflow: hidden;
+      position: relative;
     `,
 
   Image:
     styled.img`
-      width: 150px;
-      height: 150px;
+      width: 185px;
+      height: 185px;
     `,
 
 
-  ImageContainer:
+  ProductContainer:
     styled.li`
       text-align: center;
-      margin: 20px;
+      margin: 5px 0 5px 0;
+      padding-right: 10px;
+      height: 253px;
+      width: 191px;
       text-decoration-line: underline;
       :hover {
         text-decoration-line: none;
@@ -39,14 +45,29 @@ export default {
       font-weight: bold;
     `,
 
+  ProductInfo:
+    styled.div`
+      height: 44px;
+      margin-top: 4px;
+    `,
+
   ArrowBoxContainer:
     styled.div `
       display: ${props => (props.display) ? 'flex' : 'none'};
+      position: absolute;
       align-items: center;
-      border: 1px solid green;
+      top: 50%;
+      transform: translateY(-50%);
+      ${props => (props.direction === 'left') ? 'left: 0px' : 'right: 0px'};
+      height: 100%;
+      opacity: 0;
+      :hover {
+        opacity: 1;
+        transition: 0.5s;
+      }
     `,
 
-  ArrowBox:
+  ArrowButton:
     styled.button`
       height: 40px;
       width: 40px;
@@ -54,6 +75,9 @@ export default {
       border: 2px solid black;
       border-radius: 40px;
       outline: none;
+      :hover {
+        cursor: pointer;
+      }
     `,
 
   Arrow:
@@ -69,7 +93,9 @@ export default {
   ImageList:
     styled.div`
       display: flex;
-      border: 1px solid red;
+      transform: ${props => `translateX(${props.x}px)`};
+      z-index: -1;
+      transition: .5s;
     `
 }
 

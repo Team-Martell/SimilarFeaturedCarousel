@@ -1,26 +1,21 @@
 import React from 'react';
 import styles from './../styledComp/styles.jsx';
 
-class Arrow extends React.Component {
-  constructor (props) {
-    super(props);
-    this.state = {
-      display: this.props.display
-    }
-  }
+const Arrow = (props) => {
+  return (
+    <styles.ArrowBoxContainer
+      direction={props.direction}
+      display={props.display}>
+      <styles.ArrowButton>
 
-  render() {
-    return (
-      <styles.ArrowBoxContainer
-      display={this.state.display}>
-        <styles.ArrowBox>
-          <styles.Arrow
-          direction={this.props.direction}>
-          </styles.Arrow>
-        </styles.ArrowBox>
-      </styles.ArrowBoxContainer>
-    )
-  }
+        <styles.Arrow
+          direction={props.direction}
+          onClick={props.onClick}
+        ></styles.Arrow>
+
+      </styles.ArrowButton>
+    </styles.ArrowBoxContainer>
+  )
 }
 
 export default Arrow
