@@ -10,7 +10,7 @@ export default {
       text-align: center;
     `,
 
-  Carousel:
+  Slider:
     styled.ul`
       margin: 20px;
       display: flex;
@@ -94,9 +94,48 @@ export default {
     styled.div`
       display: flex;
       transform: ${props => `translateX(${props.x}px)`};
-      z-index: -1;
       transition: .5s;
-    `
+    `,
+
+  IndexTrackerContainer:
+    styled.div`
+    `,
+
+  IndexTracker:
+    styled.ul`
+      display: flex;
+      width: fit-content;
+      margin: 0 auto;
+      list-style-type: none;
+    `,
+
+  CircleContainer:
+    styled.li`
+    width: 20px;
+    height: 20px;
+    position: relative;
+    `,
+
+  Circle:
+    styled.button`
+      outline: none;
+      :hover {
+        cursor: pointer;
+      }
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      border: 1px solid rgb(136, 136, 136);
+      text-align: center;
+      transition: background-color 200ms ease-in 0s;
+      background: ${props => (props.index == props.id) ?
+     ' rgb(136, 136, 136)' :
+      'rgb(255, 255, 255)'};
+      -webkit-font-smoothing: antialiased
+    `,
 }
 
 
