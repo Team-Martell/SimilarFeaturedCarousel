@@ -13,13 +13,13 @@ class Module extends React.Component {
 
   render() {
     return(
-      <div>
+      <styles.Module>
         <styles.Title>More to Consider</styles.Title>
         <Carousel data={this.props.data}/>
         <styles.Title>Similar items</styles.Title>
         <Carousel data={this.props.data}/>
         <styles.Title>Featured products</styles.Title>
-      </div>
+      </styles.Module>
     )
   }
 }

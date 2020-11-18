@@ -2,7 +2,7 @@
   "name": "",
   "version": "",
   "description": "",
-  "author": "",
+  "author": "Fabian Yee",
   "license": "",
   "engines": {
     "node": ">=6.13.0"
@@ -12,7 +12,8 @@
     "build": "webpack -d -w",
     "seed": "node database/fakeData/fakeData.js",
     "test": "jest",
-    "reset": "mysql -u root -p < schema.sql"
+    "reset": "mysql -u root -p < schema.sql",
+    "doc": "jsdoc -c jsdoc.json"
   },
   "dependencies": {
     "express": "^4.17.1",
@@ -27,9 +28,12 @@
     "@babel/preset-env": "^7.12.1",
     "@babel/preset-react": "^7.12.5",
     "babel-loader": "^8.2.1",
+    "better-docs": "^2.3.2",
+    "cssnano": "^4.1.10",
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
     "faker": "^5.1.0",
     "jest": "^26.6.3",
+    "jsdoc": "^3.6.6",
     "nodemon": "^2.0.6",
     "webpack": "^4.44.2",
     "webpack-cli": "^4.2.0"
