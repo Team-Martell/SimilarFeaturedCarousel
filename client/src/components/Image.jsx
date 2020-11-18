@@ -6,7 +6,6 @@ class Image extends React.Component {
     super(props)
   }
 
-
   render() {
     return (
       <styles.ProductContainer>
