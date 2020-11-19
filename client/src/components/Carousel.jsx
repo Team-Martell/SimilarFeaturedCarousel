@@ -5,6 +5,141 @@ import IndexTracker from './IndexTracker.jsx';
 import styles from './../styledComp/styles.jsx';
 
 
+/**
+ * Component for rendering a Carousel
+ *
+ * @component
+ * @example
+ * var data = [
+  {
+      "imageUrl": "http://placeimg.com/640/480/food",
+      "price": 184,
+      "description": "Generic Concrete Table",
+      "name": "Gloves"
+  },
+  {
+      "imageUrl": "http://placeimg.com/640/480/fashion",
+      "price": 296,
+      "description": "Refined Rubber Bike",
+      "name": "Gloves"
+  },
+  {
+      "imageUrl": "http://placeimg.com/640/480/people",
+      "price": 412,
+      "description": "Unbranded Steel Pizza",
+      "name": "Gloves"
+  },
+  {
+      "imageUrl": "http://placeimg.com/640/480/abstract",
+      "price": 814,
+      "description": "Small Rubber Cheese",
+      "name": "Gloves"
+  },
+  {
+      "imageUrl": "http://placeimg.com/640/480/nightlife",
+      "price": 975,
+      "description": "Handmade Concrete Mouse",
+      "name": "Gloves"
+  },
+  {
+      "imageUrl": "http://placeimg.com/640/480/nature",
+      "price": 735,
+      "description": "Fantastic Fresh Ball",
+      "name": "Gloves"
+  },{
+      "imageUrl": "http://placeimg.com/640/480/food",
+      "price": 184,
+      "description": "Generic Concrete Table",
+      "name": "Gloves"
+  },
+  {
+      "imageUrl": "http://placeimg.com/640/480/fashion",
+      "price": 296,
+      "description": "Refined Rubber Bike",
+      "name": "Gloves"
+  },
+  {
+      "imageUrl": "http://placeimg.com/640/480/people",
+      "price": 412,
+      "description": "Unbranded Steel Pizza",
+      "name": "Gloves"
+  },
+  {
+      "imageUrl": "http://placeimg.com/640/480/abstract",
+      "price": 814,
+      "description": "Small Rubber Cheese",
+      "name": "Gloves"
+  },
+  {
+      "imageUrl": "http://placeimg.com/640/480/nightlife",
+      "price": 975,
+      "description": "Handmade Concrete Mouse",
+      "name": "Gloves"
+  },
+  {
+      "imageUrl": "http://placeimg.com/640/480/nature",
+      "price": 735,
+      "description": "Fantastic Fresh Ball",
+      "name": "Gloves"
+  },
+  {
+      "imageUrl": "http://placeimg.com/640/480/abstract",
+      "price": 814,
+      "description": "Small Rubber Cheese",
+      "name": "Gloves"
+  },
+  {
+      "imageUrl": "http://placeimg.com/640/480/nightlife",
+      "price": 975,
+      "description": "Handmade Concrete Mouse",
+      "name": "Gloves"
+  },
+  {
+      "imageUrl": "http://placeimg.com/640/480/nature",
+      "price": 735,
+      "description": "Fantastic Fresh Ball",
+      "name": "Gloves"
+  },{
+      "imageUrl": "http://placeimg.com/640/480/food",
+      "price": 184,
+      "description": "Generic Concrete Table",
+      "name": "Gloves"
+  },
+  {
+      "imageUrl": "http://placeimg.com/640/480/fashion",
+      "price": 296,
+      "description": "Refined Rubber Bike",
+      "name": "Gloves"
+  },
+  {
+      "imageUrl": "http://placeimg.com/640/480/people",
+      "price": 412,
+      "description": "Unbranded Steel Pizza",
+      "name": "Gloves"
+  },
+  {
+      "imageUrl": "http://placeimg.com/640/480/abstract",
+      "price": 814,
+      "description": "Small Rubber Cheese",
+      "name": "Gloves"
+  },
+  {
+      "imageUrl": "http://placeimg.com/640/480/nightlife",
+      "price": 975,
+      "description": "Handmade Concrete Mouse",
+      "name": "Gloves"
+  },
+  {
+      "imageUrl": "http://placeimg.com/640/480/nature",
+      "price": 735,
+      "description": "Fantastic Fresh Ball",
+      "name": "Gloves"
+  }
+]
+ * return (
+ * <Carousel data={data}/>
+  )
+ */
 
 class Carousel extends React.Component {
   constructor (props) {
@@ -15,7 +150,10 @@ class Carousel extends React.Component {
       left: false,
       right: true,
       xPosition: 0
-    }
+    };
+    if (this.state.size === 1) {this.state = {
+      right: false
+    }}
   }
 
   move(n) {

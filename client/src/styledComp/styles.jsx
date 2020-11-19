@@ -1,6 +1,22 @@
 import styled from 'styled-components';
 
+const ArrowBoxContainer = styled.div `
+  display: ${props => (props.display) ? 'flex' : 'none'};
+  position: absolute;
+  align-items: center;
+  top: 50%;
+  transform: translateY(-50%);
+  ${props => (props.direction === 'left') ? 'left: 0px; margin-left: 3px' : 'right: 0px'};
+  height: 100%;
+  opacity: 0;
+`;
+
 export default {
+  Module:
+    styled.div`
+      max-width:1425px;
+      margin: 0 auto;
+    `,
 
   Title:
     styled.h1`
@@ -17,6 +33,10 @@ export default {
       list-style-type: none;
       overflow: hidden;
       position: relative;
+      :hover ${ArrowBoxContainer} {
+        opacity: 1;
+        transition: 0.5s;
+      }
     `,
 
   Image:
@@ -51,21 +71,7 @@ export default {
       margin-top: 4px;
     `,
 
-  ArrowBoxContainer:
-    styled.div `
-      display: ${props => (props.display) ? 'flex' : 'none'};
-      position: absolute;
-      align-items: center;
-      top: 50%;
-      transform: translateY(-50%);
-      ${props => (props.direction === 'left') ? 'left: 0px' : 'right: 0px'};
-      height: 100%;
-      opacity: 0;
-      :hover {
-        opacity: 1;
-        transition: 0.5s;
-      }
-    `,
+  ArrowBoxContainer,
 
   ArrowButton:
     styled.button`

@@ -1,5 +1,6 @@
 node_modules
 server/fakeData/config.js
-
+.cache
+docs
 
 public/dist/bundle.js
