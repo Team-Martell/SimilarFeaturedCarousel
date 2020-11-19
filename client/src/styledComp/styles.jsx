@@ -8,7 +8,7 @@ const ArrowBoxContainer = styled.div `
   transform: translateY(-50%);
   ${props => (props.direction === 'left') ? 'left: 0px; margin-left: 8px' : 'right: 0px'};
   height: 100%;
-  opacity: 0;
+  ${props => (props.test) ? 'display: flex' : 'opacity: 0'}};
 `;
 
 export default {
@@ -16,7 +16,6 @@ export default {
     styled.div`
       max-width:1425px;
       margin: 0 auto;
-      border: 1px solid black;
     `,
 
   Title:
@@ -114,6 +113,7 @@ export default {
       display: flex;
       width: fit-content;
       margin: 0 auto;
+      margin-bottom: 30px;
       list-style-type: none;
     `,
 
@@ -172,6 +172,7 @@ export default {
       display: flex;
       position: relative;
       height: 85px;
+      border-bottom: 1px solid lightgrey;
     `,
 
   showMoreButton:

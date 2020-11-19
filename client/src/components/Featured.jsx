@@ -27,20 +27,31 @@ class Featured extends React.Component {
     }
   }
 
+
   render() {
     return (
       <styles.featuredContainer>
         <styles.showAlwaysContainer>
           {this.state.showAlways.map((item, i) => {
             return (
-              <Image data={item} key={i} featured={true}/>
+              <Image
+                data={item}
+                key={i}
+                featured={true}
+                onClick={this.props.onClick}
+              />
             );
           })}
         </styles.showAlwaysContainer>
         <styles.restContainer show={this.state.show}>
           {this.state.rest.map((item, i) => {
             return (
-              <Image data={item} key={i} featured={true}/>
+              <Image
+                data={item}
+                key={i}
+                featured={true}
+                onClick={this.props.onClick}
+              />
             );
           })}
         </styles.restContainer>

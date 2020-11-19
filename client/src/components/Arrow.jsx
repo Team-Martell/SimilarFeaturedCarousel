@@ -1,27 +1,28 @@
 import React from 'react';
-import styles from './../styledComp/styles.jsx';
+import styles from '../styledComp/styles.jsx';
 /**
- * Component for rendering the arrow xd
+ * Component for rendering the arrow
  *
  * @component
  * @example
- * const direction = 'left'
+ * const direction = 'right'
  * const display = true
- * const onClick = () => {console.log('clicked')}
  * return (
- * <Arrow direction={direction} display={true} onClick={onClick}/>
+ * <Arrow
+    direction='left'
+    display={display}
+    test={display}
+  />
   )
  */
 
- /**
-  *
-  * @param {*} props
-  */
+
 const Arrow = (props) => {
   return (
     <styles.ArrowBoxContainer
       direction={props.direction}
       display={props.display}
+      test={props.test}
     >
       <styles.ArrowButton
         onClick={props.onClick}

@@ -2,7 +2,7 @@ import React from 'react';
 import Image from './Image.jsx';
 import Arrow from './Arrow.jsx';
 import IndexTracker from './IndexTracker.jsx';
-import styles from './../styledComp/styles.jsx';
+import styles from '../styledComp/styles.jsx';
 
 
 /**
@@ -254,20 +254,24 @@ class Carousel extends React.Component {
 
             <styles.ImageList x={this.state.xPosition}>
               {this.props.data.map((item, i) => {
-                return (<Image data={item} key={i} featured={false}/>);
+                return (
+                <Image
+                  data={item}
+                  key={i}
+                  featured={false}
+                  onClick={this.props.onClick}
+                />);
               })}
             </styles.ImageList>
             <Arrow
               direction='left'
               display={this.state.left}
               onClick={this.goPrev.bind(this)}
-              index={this.state.currentIndex}
             />
             <Arrow
               direction='right'
               display={this.state.right}
               onClick={this.goNext.bind(this)}
-              index={this.state.currentIndex}
             />
         </styles.Slider>
         <styles.IndexTrackerContainer>
