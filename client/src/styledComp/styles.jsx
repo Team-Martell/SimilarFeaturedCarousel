@@ -6,7 +6,7 @@ const ArrowBoxContainer = styled.div `
   align-items: center;
   top: 50%;
   transform: translateY(-50%);
-  ${props => (props.direction === 'left') ? 'left: 0px; margin-left: 3px' : 'right: 0px'};
+  ${props => (props.direction === 'left') ? 'left: 0px; margin-left: 8px' : 'right: 0px'};
   height: 100%;
   opacity: 0;
 `;
@@ -16,6 +16,7 @@ export default {
     styled.div`
       max-width:1425px;
       margin: 0 auto;
+      border: 1px solid black;
     `,
 
   Title:
@@ -50,9 +51,10 @@ export default {
     styled.li`
       text-align: center;
       margin: 5px 0 5px 0;
-      padding-right: 10px;
+      padding-right: 5px;
+      padding-left: 5px;
       height: 253px;
-      width: 191px;
+      width: ${props => (props.featured) ? '227px': '191px'};
       text-decoration-line: underline;
       :hover {
         text-decoration-line: none;
@@ -142,6 +144,53 @@ export default {
       'rgb(255, 255, 255)'};
       -webkit-font-smoothing: antialiased
     `,
+
+  featuredContainer:
+    styled.div`
+      margin: 0 auto;
+    `,
+
+  showAlwaysContainer:
+    styled.ul`
+      display: flex;
+      margin: 0 auto;
+      width: fit-content;
+      list-style-type: none;
+    `,
+
+  restContainer:
+    styled.ul`
+      display: ${props => (props.show) ? 'flex' : 'none'};
+      margin: 0 auto;
+      width: fit-content;
+      list-style-type: none;
+      flex-wrap: wrap;
+      max-width: 1440px;
+    `,
+  smButtonContainer:
+    styled.div`
+      display: flex;
+      position: relative;
+      height: 85px;
+    `,
+
+  showMoreButton:
+    styled.button`
+      outline: none;
+      position: absolute;
+      background-color: white;
+      border: 1px solid black;
+      border-radius: 10px;
+      margin: 0 16px;
+      padding: 0 12px;
+      height: 42px;
+      left: 50%;
+      transform: translate(-50%);
+      :hover {
+        background-color: lightgrey;
+        cursor: pointer;
+      }
+    `
 }
 
 

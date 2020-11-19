@@ -13,6 +13,10 @@ import styles from './../styledComp/styles.jsx';
   )
  */
 
+ /**
+  *
+  * @param {*} props
+  */
 const Arrow = (props) => {
   return (
     <styles.ArrowBoxContainer
