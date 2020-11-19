@@ -8,6 +8,7 @@ import styles from './../styledComp/styles.jsx';
 /**
  * Component for rendering a Carousel
  *
+ * asdfashdfakjsdhflkashfdakjlshflkjafs
  * @component
  * @example
  * var data = [
@@ -253,7 +254,7 @@ class Carousel extends React.Component {
 
             <styles.ImageList x={this.state.xPosition}>
               {this.props.data.map((item, i) => {
-                return (<Image data={item} key={i}/>);
+                return (<Image data={item} key={i} featured={false}/>);
               })}
             </styles.ImageList>
             <Arrow

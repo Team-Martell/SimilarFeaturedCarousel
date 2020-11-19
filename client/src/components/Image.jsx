@@ -4,17 +4,20 @@ import styles from './../styledComp/styles.jsx';
 class Image extends React.Component {
   constructor(props) {
     super(props)
+    this.state = {
+      id: this.props.data.id
+    }
   }
 
   render() {
     return (
-      <styles.ProductContainer>
+      <styles.ProductContainer featured={this.props.featured}>
         <styles.Image
           src={this.props.data.imageUrl}>
         </styles.Image>
         <styles.ProductInfo>
           <styles.Price>
-            {'$'.concat(this.props.data.price)}
+            {`$${this.props.data.price.toFixed(2)}`}
           </styles.Price>
           <div>
             {(this.props.data.description.length < 23) ?

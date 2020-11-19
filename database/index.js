@@ -15,7 +15,7 @@ const getDataWithPType = (productid, cb) => {
     if (err) {return console.log(err);}
     var productType = (data[0].name);
 
-    var qString = 'SELECT imageUrl, price, description, productTypes.name FROM products LEFT JOIN productTypes ON products.productType_id = productTypes.id WHERE productTypes.name = ?';
+    var qString = 'SELECT products.id, imageUrl, price, description, productTypes.name FROM products LEFT JOIN productTypes ON products.productType_id = productTypes.id WHERE productTypes.name = ?';
     connection.query(qString, [productType], (err, data) => {
         if (err) {return console.log(err);}
         cb(data);
@@ -30,7 +30,7 @@ const getDataWithCategory = (productid, cb) => {
     if (err) {return console.log(err);}
     var productType = (data[0].name);
 
-    var qString = 'SELECT imageUrl, price, description, categories.name, featured FROM products LEFT JOIN categories ON products.category_id = categories.id WHERE categories.name = ?';
+    var qString = 'SELECT products.id, imageUrl, price, description, categories.name, featured FROM products LEFT JOIN categories ON products.category_id = categories.id WHERE categories.name = ?';
     connection.query(qString, [productType], (err, data) => {
         if (err) {return console.log(err);}
         cb(data);
