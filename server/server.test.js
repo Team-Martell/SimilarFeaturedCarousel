@@ -18,13 +18,16 @@ afterAll(() => {
 
 it('Test the endpoint moreToConsider', async done => {
   const res = await request.get('/api/1/moreToConsider');
+  expect(response.status).toBe(200);
   done();
 }),
 it('Test the endpoint similar', async done => {
   const res = await request.get('/api/1/similar');
+  expect(response.status).toBe(200);
   done();
 }),
 it('Test the endpoint featured', async done => {
   const res = await request.get('/api/1/featured');
+  expect(response.status).toBe(200);
   done();
 })
