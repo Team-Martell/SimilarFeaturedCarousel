@@ -11,7 +11,9 @@ class Module extends React.Component {
     super(props);
     this.state = {
       moreToConsider: this.props.moreToConsider,
+      mLength: Math.ceil(this.props.moreToConsider.length / 7),
       similar: this.props.similar,
+      sLength: Math.ceil(this.props.similar.length / 7),
       featured: this.props.featured
     }
   }
@@ -20,8 +22,12 @@ class Module extends React.Component {
     request.getAllData(id, (data) => {
       this.setState({
         moreToConsider: data[0],
+        mLength: Math.ceil(data[0].length / 7),
         similar: data[1],
+        sLength: Math.ceil(data[1].length / 7),
         featured: data[2]
+      },() => {
+        console.log(this.state.mLength);
       })
     });
   }
@@ -34,11 +40,13 @@ class Module extends React.Component {
         <styles.Title>More to Consider</styles.Title>
         <Carousel
           data={this.state.moreToConsider}
+          length={this.state.mLength}
           onClick={this.onClick.bind(this)}
         />
         <styles.Title>Similar items</styles.Title>
         <Carousel
           data={this.state.similar}
+          length={this.state.sLength}
           onClick={this.onClick.bind(this)}
         />
         <styles.Title>Featured products</styles.Title>

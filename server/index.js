@@ -30,8 +30,4 @@ app.get('/api/:productid/featured', (req, res) => {
   });
 });
 
-const PORT = 9999;
-
-app.listen(PORT, () => {
-  console.log(`listening to port ${PORT}`);
-})
+module.exports = app;
