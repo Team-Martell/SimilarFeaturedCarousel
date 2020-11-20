@@ -165,7 +165,7 @@ export default {
       width: fit-content;
       list-style-type: none;
       flex-wrap: wrap;
-      max-width: 1440px;
+      width: 1440px;
     `,
   smButtonContainer:
     styled.div`
