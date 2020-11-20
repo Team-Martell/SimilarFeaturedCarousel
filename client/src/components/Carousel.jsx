@@ -2,7 +2,7 @@ import React from 'react';
 import Image from './Image.jsx';
 import Arrow from './Arrow.jsx';
 import IndexTracker from './IndexTracker.jsx';
-import styles from './../styledComp/styles.jsx';
+import styles from '../styledComp/styles.jsx';
 
 
 /**
@@ -146,16 +146,16 @@ class Carousel extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      size: Math.ceil(this.props.data.length / 7),
       currentIndex: 0,
       left: false,
       right: true,
       xPosition: 0
     };
-    if (this.state.size === 1) {this.state = {
+    if (this.props.length === 1) {this.state = {
       right: false
     }}
   }
+
 
   move(n) {
     var x = this.state.xPosition;
@@ -180,8 +180,9 @@ class Carousel extends React.Component {
   }
 
   goNext() {
+    console.log(this.props.length)
     var index = this.state.currentIndex;
-    var length = this.state.size;
+    var length = this.props.length;
     var lastIndex = length - 1;
     if (index < lastIndex) {
       this.move(-1);
@@ -189,7 +190,7 @@ class Carousel extends React.Component {
       this.setState({
         currentIndex: index,
       }, () => {
-        if (this.state.currentIndex === this.state.size - 1) {
+        if (this.state.currentIndex === this.props.length - 1) {
           this.turnOff('right');
         }
         if (this.state.currentIndex === 1) {
@@ -201,7 +202,7 @@ class Carousel extends React.Component {
 
   goPrev() {
     var index = this.state.currentIndex;
-    var length = this.state.size;
+    var length = this.props.length;
     var x = this.state.xPosition;
 
     if (index > 0) {
@@ -211,7 +212,7 @@ class Carousel extends React.Component {
         currentIndex: index,
       }, () => {
 
-        if (this.state.currentIndex === this.state.size - 2) {
+        if (this.state.currentIndex === this.props.length - 2) {
           this.turnOn('right');
         }
 
@@ -223,7 +224,7 @@ class Carousel extends React.Component {
   }
 
   onCircleClick(e) {
-    var length = this.state.size;
+    var length = this.props.length;
     var x = this.state.xPosition;
     var index = e.target.id;
     var dif = this.state.currentIndex - index;
@@ -254,25 +255,29 @@ class Carousel extends React.Component {
 
             <styles.ImageList x={this.state.xPosition}>
               {this.props.data.map((item, i) => {
-                return (<Image data={item} key={i} featured={false}/>);
+                return (
+                <Image
+                  data={item}
+                  key={i}
+                  featured={false}
+                  onClick={this.props.onClick}
+                />);
               })}
             </styles.ImageList>
             <Arrow
               direction='left'
               display={this.state.left}
               onClick={this.goPrev.bind(this)}
-              index={this.state.currentIndex}
             />
             <Arrow
               direction='right'
               display={this.state.right}
               onClick={this.goNext.bind(this)}
-              index={this.state.currentIndex}
             />
         </styles.Slider>
         <styles.IndexTrackerContainer>
           <IndexTracker
-            length={this.state.size}
+            length={this.props.length}
             index={this.state.currentIndex}
             onClick={this.onCircleClick.bind(this)}
           />
