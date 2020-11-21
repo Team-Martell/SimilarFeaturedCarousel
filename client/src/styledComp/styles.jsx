@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 const ArrowBoxContainer = styled.div `
+      margin: 0;
+      padding: 0;
   display: ${props => (props.display) ? 'flex' : 'none'};
   position: absolute;
   align-items: center;
@@ -14,12 +16,16 @@ const ArrowBoxContainer = styled.div `
 export default {
   Module:
     styled.div`
+      margin: 0;
+      padding: 0;
       max-width:1425px;
       margin: 0 auto;
     `,
 
   Title:
     styled.h1`
+      margin: 0;
+      padding: 0;
       font-weight: bold;
       font-size: 24px;
       /* border: 2px solid black; */
@@ -28,6 +34,8 @@ export default {
 
   Slider:
     styled.ul`
+      margin: 0;
+      padding: 0;
       margin: 20px;
       display: flex;
       list-style-type: none;
@@ -41,6 +49,8 @@ export default {
 
   Image:
     styled.img`
+      margin: 0;
+      padding: 0;
       width: 185px;
       height: 185px;
     `,
@@ -48,6 +58,8 @@ export default {
 
   ProductContainer:
     styled.li`
+      margin: 0;
+      padding: 0;
       text-align: center;
       margin: 5px 0 5px 0;
       padding-right: 5px;
@@ -63,11 +75,15 @@ export default {
 
   Price:
     styled.div`
+      margin: 0;
+      padding: 0;
       font-weight: bold;
     `,
 
   ProductInfo:
     styled.div`
+      margin: 0;
+      padding: 0;
       height: 44px;
       margin-top: 4px;
     `,
@@ -76,6 +92,8 @@ export default {
 
   ArrowButton:
     styled.button`
+      margin: 0;
+      padding: 0;
       height: 40px;
       width: 40px;
       background-color: white;
@@ -89,6 +107,8 @@ export default {
 
   Arrow:
     styled.div`
+      margin: 0;
+      padding: 0;
       border: solid black;
       border-width: 0 2px 2px 0;
       margin: 0 auto;
@@ -99,6 +119,8 @@ export default {
 
   ImageList:
     styled.div`
+      margin: 0;
+      padding: 0;
       display: flex;
       transform: ${props => `translateX(${props.x}px)`};
       transition: .5s;
@@ -106,10 +128,14 @@ export default {
 
   IndexTrackerContainer:
     styled.div`
+    margin: 0;
+    padding: 0;
     `,
 
   IndexTracker:
     styled.ul`
+    margin: 0;
+    padding: 0;
       display: flex;
       width: fit-content;
       margin: 0 auto;
@@ -119,6 +145,8 @@ export default {
 
   CircleContainer:
     styled.li`
+    margin: 0;
+    padding: 0;
     width: 20px;
     height: 20px;
     position: relative;
@@ -126,6 +154,8 @@ export default {
 
   Circle:
     styled.button`
+    margin: 0;
+    padding: 0;
       outline: none;
       :hover {
         cursor: pointer;
@@ -147,11 +177,15 @@ export default {
 
   featuredContainer:
     styled.div`
+      margin: 0;
+      padding: 0;
       margin: 0 auto;
     `,
 
   showAlwaysContainer:
     styled.ul`
+      margin: 0;
+      padding: 0;
       display: flex;
       margin: 0 auto;
       width: fit-content;
@@ -160,6 +194,8 @@ export default {
 
   restContainer:
     styled.ul`
+      margin: 0;
+      padding: 0;
       display: ${props => (props.show) ? 'flex' : 'none'};
       margin: 0 auto;
       width: fit-content;
@@ -169,6 +205,8 @@ export default {
     `,
   smButtonContainer:
     styled.div`
+      margin: 0;
+      padding: 0;
       display: flex;
       position: relative;
       height: 85px;

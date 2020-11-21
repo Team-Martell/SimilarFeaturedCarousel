@@ -148,16 +148,49 @@ class Carousel extends React.Component {
     this.state = {
       currentIndex: 0,
       left: false,
-      right: true,
+      right: false,
       xPosition: 0
     };
-    if (this.props.length === 1) {this.state = {
-      right: false
-    }}
+
+  }
+
+  componentDidUpdate(prev) {
+    if (this.props.data !== prev.data) {
+      console.log(this.props.data);
+      this.setState({
+        xPosition: 0,
+        currentIndex: 0,
+        left: false,
+      }, () => {
+        if (this.props.length > 1) {
+          this.setState({
+            right: true
+          })
+        } else {
+          this.setState({
+            right:false
+          })
+        }
+      })
+    }
+    if (this.props.length !== prev.length) {
+      if (this.props.length > 1) {
+        this.setState({
+          right: true
+        })
+      } else {
+        this.setState({
+          right:false
+        })
+      }
+
+    }
   }
 
 
+
   move(n) {
+    console.log(this.state.x)
     var x = this.state.xPosition;
     var dif = 1407 * n;
     x += dif;
