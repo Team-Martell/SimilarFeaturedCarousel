@@ -78,7 +78,6 @@ export default {
       margin: 0;
       padding: 0;
       font-weight: bold;
-      background-color: white;
     `,
 
   ProductInfo:
