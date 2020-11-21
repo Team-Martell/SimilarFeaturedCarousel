@@ -20,7 +20,7 @@
 > Some usage instructions
 First of all, npm i to install all dependencies.
 
-To create the database, you will need to create a copy of the exampleConfig.js file that is in /database/config and assing your information.
+To create the database, you will need to create a copy of the exampleConfig.js (/database/config) file, rename it to config.js and completing it with your information.
 
 To create the schema, you will can npm run reset.(this script will reset the database if it already exists, if not it will create it)
 
