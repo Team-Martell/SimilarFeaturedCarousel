@@ -8,7 +8,8 @@
     "node": ">=6.13.0"
   },
   "scripts": {
-    "server": "nodemon server/server.js",
+    "server": "node server/server.js",
+    "server:dev": "nodemon server/server.js",
     "build": "webpack -d -w",
     "seed": "node database/fakeData/fakeData.js",
     "test": "jest --watch --coverage",

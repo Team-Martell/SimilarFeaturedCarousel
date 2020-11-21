@@ -23,10 +23,10 @@ const fillProductTypes = async (n) => {
   var qString = 'INSERT IGNORE INTO ProductTypes (Name) VALUES (?)'
   for (var i = 0; i < productTypes.length; i++) {
     await connection.query(qString, [productTypes[i]], (err, res) => {
-      if (err) { return console.log(err)}
-      // console.log('store data to', i);
+      if (err) { return console.log(err)};
+
     });
-    // console.log('data stored in', i);
+    console.log(`filling ProductTypes ${i+1} of ${n}`)
   }
   // console.log('all stored');
 }
@@ -47,6 +47,7 @@ const fillCategories = async (n) => {
       await connection.query(qString, [categories[i]], (err, res) => {
       if (err) { return console.log(err)}
     });
+    console.log(`filling Categories ${i+1} of ${n}`)
   }
 }
 
@@ -71,7 +72,9 @@ const fillProducts = async (n) => {
       await connection.query(qString, products[i], (err, res) => {
       if (err) { return console.log(err)}
     });
+    console.log(`filling Products ${i+1} of ${n}`)
   }
+  connection.end();
 }
 
 
