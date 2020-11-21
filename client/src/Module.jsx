@@ -20,7 +20,6 @@ class Module extends React.Component {
 
   componentDidMount() {
     request.getAllData(1, (data) => {
-      console.log(data);
       this.setState({
         moreToConsider: data[0],
         mLength: Math.ceil(data[0].length / 7),
