@@ -23,7 +23,7 @@ class Featured extends React.Component {
     if (this.state.show) {
       return 'Show Less';
     } else {
-      return `Show More (${this.state.rest.length})`;
+      return `Show More (${this.props.data.slice(6).length})`;
     }
   }
 
@@ -32,7 +32,7 @@ class Featured extends React.Component {
     return (
       <styles.featuredContainer>
         <styles.showAlwaysContainer>
-          {this.state.showAlways.map((item, i) => {
+          {this.props.data.slice(0,6).map((item, i) => {
             return (
               <Image
                 data={item}
@@ -44,7 +44,7 @@ class Featured extends React.Component {
           })}
         </styles.showAlwaysContainer>
         <styles.restContainer show={this.state.show}>
-          {this.state.rest.map((item, i) => {
+          {this.props.data.slice(6).map((item, i) => {
             return (
               <Image
                 data={item}

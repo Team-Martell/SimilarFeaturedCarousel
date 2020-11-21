@@ -3,7 +3,7 @@ import $ from 'jquery'
 var getMoreToConsider = (id, cb) => {
   $.ajax({
     method: 'GET',
-    url: `/api/${id}/moreToConsider`,
+    url: `/api/carousel/${id}/moreToConsider`,
     success: (data) => {
       cb(data);
     }
@@ -12,7 +12,7 @@ var getMoreToConsider = (id, cb) => {
 var getSimilar = (id, cb) => {
   $.ajax({
     method: 'GET',
-    url: `/api/${id}/similar`,
+    url: `/api/carousel/${id}/similar`,
     success: (data) => {
       cb(data);
     }
@@ -21,7 +21,7 @@ var getSimilar = (id, cb) => {
 var getFeatured = (id, cb) => {
   $.ajax({
     method: 'GET',
-    url: `/api/${id}/featured`,
+    url: `/api/carousel/${id}/featured`,
     success: (data) => {
       cb(data);
     }

@@ -1,5 +1,5 @@
 var faker = require('faker');
-var { database, user, password } = require('./config.js')
+var { database, user, password } = require('../config/config.js')
 const mysql = require('mysql');
 const connection = mysql.createConnection({
   host: 'localhost',

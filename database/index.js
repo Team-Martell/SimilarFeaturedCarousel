@@ -1,5 +1,5 @@
 const mysql = require('mysql');
-const { database, user, password } = require('./fakeData/config.js')
+const { database, user, password } = require('./config/config.js')
 
 const connection = mysql.createConnection({
   host: 'localhost',
