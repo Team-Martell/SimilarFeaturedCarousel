@@ -18,7 +18,9 @@
 ## Usage
 
 > Some usage instructions
-To create the database, you will need to create a copy of the config file that is inside the database folder.
+First of all, npm i to install all dependencies.
+
+To create the database, you will need to create a copy of the exampleConfig.js file that is in /database/config.
 
 ## Requirements
 
