@@ -18,6 +18,7 @@
 ## Usage
 
 > Some usage instructions
+To create the database, you will need to create a copy of the config file that is inside the database folder.
 
 ## Requirements
 
