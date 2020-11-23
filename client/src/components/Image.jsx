@@ -1,4 +1,5 @@
-import React from 'react';
+
+const {React} = window;
 import styles from './../styledComp/styles.jsx';
 
 class Image extends React.Component {

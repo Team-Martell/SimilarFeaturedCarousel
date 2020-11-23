@@ -1,5 +1,7 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+
+const {React} = window;
+
+const {ReactDOM} = window;
 import Module from './Module.jsx';
 import request from './request.js'
 

@@ -1,4 +1,4 @@
-import React from 'react';
+const {React} = window;
 import styles from '../styledComp/styles.jsx';
 /**
  * Component for rendering the arrow
