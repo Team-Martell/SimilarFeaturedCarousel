@@ -1,4 +1,5 @@
-import React from 'react';
+
+const {React} = window;
 import Carousel from './components/Carousel.jsx';
 import Featured from './components/Featured.jsx';
 import styles from './styledComp/styles.jsx';

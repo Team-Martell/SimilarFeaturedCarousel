@@ -1,4 +1,5 @@
-import React from 'react';
+
+const {React} = window;
 import Image from './Image.jsx';
 import Arrow from './Arrow.jsx';
 import IndexTracker from './IndexTracker.jsx';
