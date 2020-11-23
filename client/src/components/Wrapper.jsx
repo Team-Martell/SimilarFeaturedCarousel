@@ -1,7 +1,5 @@
-
 const {React} = window;
 import { StyleSheetManager } from 'styled-components'
-
 const Component = (props) => {
   const { frameContext } = props
   return (
