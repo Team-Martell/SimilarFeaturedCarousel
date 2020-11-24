@@ -20,7 +20,7 @@ const createFakeProductTypes = (n) => {
 const fillProductTypes = async (n) => {
   var productTypes = createFakeProductTypes(n);
 
-  var qString = 'INSERT IGNORE INTO ProductTypes (Name) VALUES (?)'
+  var qString = 'INSERT IGNORE INTO productTypes (Name) VALUES (?)'
   for (var i = 0; i < productTypes.length; i++) {
     await connection.query(qString, [productTypes[i]], (err, res) => {
       if (err) { return console.log(err)};
