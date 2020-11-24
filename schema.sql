@@ -4,19 +4,19 @@ CREATE DATABASE FECCarousel;
 
 USE FECCarousel;
 
-CREATE TABLE Categories (
+CREATE TABLE categories (
   id int NOT NULL AUTO_INCREMENT,
   Name varchar(50) UNIQUE,
   PRIMARY KEY (id)
 );
 
-CREATE TABLE ProductTypes (
+CREATE TABLE productTypes (
   id int NOT NULL AUTO_INCREMENT,
   Name varchar(50) UNIQUE,
   PRIMARY KEY (id)
 );
 
-CREATE TABLE Products (
+CREATE TABLE products (
   id int NOT NULL AUTO_INCREMENT,
   description varchar(100) NOT NULL UNIQUE,
   price decimal(7, 2) NOT NULL,
@@ -26,7 +26,7 @@ CREATE TABLE Products (
   category_id int,
   productType_id int,
   PRIMARY KEY(id),
-  FOREIGN KEY (category_id) REFERENCES Categories(id),
-  FOREIGN KEY (productType_id) REFERENCES ProductTypes(id)
+  FOREIGN KEY (category_id) REFERENCES categories(id),
+  FOREIGN KEY (productType_id) REFERENCES productTypes(id)
 );
 
